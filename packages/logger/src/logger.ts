@@ -6,12 +6,14 @@ export type LogFn = (msg: string, data?: Record<string, unknown>) => void;
 const wrapLogger = (pinoLogger: pino.Logger): Logger => {
   const createLogFn = (level: pino.Level): LogFn => {
     return (msg: string, data?: Record<string, unknown>) => {
+      const logByLevel = pinoLogger[level];
+
       if (!data) {
-        pinoLogger[level](msg);
+        logByLevel(msg);
         return;
       }
 
-      pinoLogger[level](data, msg);
+      logByLevel(data, msg);
     };
   };
 
