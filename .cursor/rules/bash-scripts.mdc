@@ -1,0 +1,33 @@
+---
+globs: *.sh,*.bash
+---
+
+# Bash Script Guidelines
+
+## General Approach
+- Quote variables to prevent word splitting
+- Use functions to organize code
+- Only prefer `[[ ]]` over `[ ]` when valuable
+- Do not use `local` or other bashism's, just declare variables normally
+- Only use `set -euo pipefail` when adds value
+
+## Code Style
+- Write small, single-purpose functions that do one thing well
+- Use early returns and guard clauses to reduce nesting
+- Make it work first, then reason about abstractions if truly needed
+- Prefer readability over brevity
+
+## Variable Usage
+- Always quote variables: `"$variable"` not `$variable`
+- Use descriptive variable names
+- Declare variables normally, avoid bash-specific features unless necessary
+
+## Error Handling
+- Fail loud and fast with descriptive error messages
+- Use `set -euo pipefail` only when it adds value to error handling
+- Handle errors at the appropriate level - don't swallow them
+
+## Unix Philosophy
+- Text streams, pipes, small focused utilities
+- Terminal-first mindset: CLI > GUI, scripts > clicking
+- Use grep/sed/awk over complex programming when appropriate

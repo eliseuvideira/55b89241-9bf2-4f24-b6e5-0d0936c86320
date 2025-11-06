@@ -1,0 +1,39 @@
+{
+  "name": "@55b89241-9bf2-4f24-b6e5-0d0936c86320/rabbitmq-app-builder",
+  "version": "0.1.0",
+  "description": "RabbitMQ consumer application builder with graceful shutdown",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "keywords": [
+    "rabbitmq",
+    "amqp",
+    "consumer",
+    "queue"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "amqplib": "^0.10.9"
+  },
+  "peerDependencies": {
+    "@55b89241-9bf2-4f24-b6e5-0d0936c86320/logger": "workspace:*"
+  },
+  "devDependencies": {
+    "@55b89241-9bf2-4f24-b6e5-0d0936c86320/logger": "workspace:*",
+    "@types/amqplib": "^0.10.8",
+    "@types/node": "^24.10.0",
+    "typescript": "^5.9.3"
+  }
+}

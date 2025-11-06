@@ -1,0 +1,40 @@
+---
+alwaysApply: true
+---
+
+# Tool Selection Guidelines
+
+## Language Choice
+- **Bash/shell scripts** for simple system tasks, automation, and glue code
+- **Rust** when you need performance, safety, or system-level control
+- **JavaScript/Node.js** when you want hackable scripts, async operations, or ecosystem access
+- Use the simplest tool that gets the job done reliably
+
+## Decision Framework
+- Start with the simplest tool that can solve the problem
+- Choose based on specific requirements, not personal preference
+- Consider the ecosystem and libraries available
+- Prefer tools that are hackable and composable
+
+## When to Use Each Tool
+
+### Bash/Shell Scripts
+- Simple system tasks and automation
+- Glue code between different tools
+- Text processing with grep/sed/awk
+- File system operations
+- Quick one-off scripts
+
+### Rust
+- Performance-critical applications
+- System-level control needed
+- Safety requirements
+- CLI tools that need to be fast
+- When memory safety is important
+
+### JavaScript/Node.js
+- Hackable scripts and automation
+- Async operations and I/O heavy tasks
+- When you need access to the npm ecosystem
+- Web scraping and API interactions
+- Quick prototyping and data processing

@@ -1,0 +1,24 @@
+{
+  "name": "@55b89241-9bf2-4f24-b6e5-0d0936c86320/root",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "format": "turbo run format",
+    "test": "turbo run test",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "turbo run build && changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.1",
+    "turbo": "^2.3.3",
+    "typescript": "^5.9.3"
+  },
+  "packageManager": "pnpm@10.12.1",
+  "workspaces": [
+    "packages/*"
+  ]
+}

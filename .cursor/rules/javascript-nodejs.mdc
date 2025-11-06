@@ -1,0 +1,31 @@
+---
+globs: *.js,*.mjs,*.cjs
+---
+
+# JavaScript/Node.js Guidelines
+
+## General Approach
+- Follow idiomatic JS patterns but keep it simple
+- In async functions, always await and return values explicitly
+- Use functional methods (map, filter, reduce) when they clarify intent
+
+## Code Style
+- Prefer plain functions over classes
+- Use early returns and guard clauses to reduce nesting
+- Write small, single-purpose functions that do one thing well
+- Make it work first, then reason about abstractions if truly needed
+
+## Async/Await
+- Always await promises in async functions
+- Return values explicitly rather than relying on implicit returns
+- Handle errors appropriately with try/catch or .catch()
+
+## Functional Programming
+- Use map, filter, reduce when they clarify intent
+- Prefer data over objects
+- Compose small functions rather than creating large monolithic ones
+
+## Error Handling
+- Fail loud and fast with descriptive error messages
+- Preserve error context and stack traces for debugging
+- Handle errors at the appropriate level - don't swallow them

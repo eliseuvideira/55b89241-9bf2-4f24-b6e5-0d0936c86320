@@ -1,0 +1,39 @@
+---
+globs: *.rs
+---
+
+# Rust Guidelines
+
+## General Approach
+- Follow idiomatic Rust patterns but favor simplicity
+- Prefer iterators when they're clearer, loops when they're not
+- Make it work first, then we can "reason" about abstracting things
+- Use `anyhow::Result` and `?` operator to simplify error handling
+- Use `clap` for CLI scripts
+- Use modules only when they help organize code
+
+## Code Style
+- Write small, single-purpose functions that do one thing well
+- Use early returns and guard clauses to reduce nesting
+- Make it work first, then reason about abstractions if truly needed
+- Prefer plain functions over complex abstractions
+
+## Error Handling
+- Use `anyhow::Result` and `?` operator to simplify error handling
+- Fail loud and fast with descriptive error messages
+- Preserve error context and stack traces for debugging
+- Handle errors at the appropriate level - don't swallow them
+
+## Iterators vs Loops
+- Prefer iterators when they're clearer
+- Use loops when they're more readable
+- Don't force iterator usage if a simple loop is more appropriate
+
+## CLI Applications
+- Use `clap` for CLI scripts
+- Keep CLI interfaces simple and focused
+
+## Module Organization
+- Use modules only when they help organize code
+- Don't over-engineer the module structure
+- Keep it simple and flat when possible
