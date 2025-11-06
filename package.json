@@ -11,7 +11,7 @@
     "changeset": "changeset",
     "version-packages": "changeset version",
     "ci:version": "changeset version && pnpm install --lockfile-only",
-    "ci:publish": "pnpm publish -r --no-git-checks"
+    "ci:publish": "pnpm publish -r --no-git-checks --access public"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.1",
