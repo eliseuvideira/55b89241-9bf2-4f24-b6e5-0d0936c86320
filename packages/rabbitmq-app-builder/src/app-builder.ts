@@ -1,13 +1,13 @@
-import amqplib from "amqplib";
-import type { Message } from "amqplib";
-import type { Logger } from "@55b89241-9bf2-4f24-b6e5-0d0936c86320/logger";
-import type { Config } from "./types/Config";
-import { createRun } from "./functions/create-run";
-import { createStop } from "./functions/create-stop";
-import { withMessageHandling } from "./functions/with-message-handling";
-import type { App } from "./types/App";
-import type { AppState } from "./types/AppState";
-import type { MessageHandler } from "./types/MessageHandler";
+import amqplib from 'amqplib';
+import type { Message } from 'amqplib';
+import type { Logger } from '@55b89241-9bf2-4f24-b6e5-0d0936c86320/logger';
+import type { Config } from './types/Config';
+import { createRun } from './functions/create-run';
+import { createStop } from './functions/create-stop';
+import { withMessageHandling } from './functions/with-message-handling';
+import type { App } from './types/App';
+import type { AppState } from './types/AppState';
+import type { MessageHandler } from './types/MessageHandler';
 
 type Consumer = {
   queue: string;
@@ -19,7 +19,7 @@ export const AppBuilder = <Context extends { logger: Logger }>(
   define: (config: Config) => Array<{
     queue: string;
     handler: MessageHandler<Context>;
-  }>,
+  }>
 ) => {
   return {
     async build(config: Config, logger: Logger): Promise<App> {
@@ -47,13 +47,13 @@ export const AppBuilder = <Context extends { logger: Logger }>(
             state,
             wrappedHandler,
           };
-        }),
+        })
       );
 
-      return {
-        run: createRun(consumers, logger),
-        stop: createStop(connection, consumers, logger),
-      };
+      const run = createRun(consumers, logger);
+      const stop = createStop(connection, consumers, logger);
+
+      return { run, stop };
     },
   };
 };
