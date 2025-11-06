@@ -59,8 +59,9 @@ packages/
 
 1. Replace `@55b89241-9bf2-4f24-b6e5-0d0936c86320` with your npm scope
 2. Set up GitHub repository
-3. Add `NPM_TOKEN` to GitHub Secrets
-4. Install Changesets bot (optional)
+3. **Enable GitHub Actions to create PRs** (Settings → Actions → General)
+4. Add `NPM_TOKEN` to GitHub Secrets
+5. Install Changesets bot (optional)
 
 See [SETUP.md](./SETUP.md) for detailed instructions.
 
@@ -69,6 +70,7 @@ See [SETUP.md](./SETUP.md) for detailed instructions.
 - [SETUP.md](./SETUP.md) - Complete setup and workflow guide
 - [WORKFLOW.md](./WORKFLOW.md) - Visual workflow from code to publish
 - [CHANGESET_ENFORCEMENT.md](./CHANGESET_ENFORCEMENT.md) - How to enforce changesets on PRs
+- [TROUBLESHOOTING.md](./TROUBLESHOOTING.md) - Common issues and solutions
 - [USAGE_EXAMPLE.md](./USAGE_EXAMPLE.md) - How to use these packages in your app
 - [packages/logger/README.md](./packages/logger/README.md) - Logger package docs
 - [packages/rabbitmq-app-builder/README.md](./packages/rabbitmq-app-builder/README.md) - RabbitMQ builder docs
