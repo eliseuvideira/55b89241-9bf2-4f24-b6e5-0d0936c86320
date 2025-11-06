@@ -1,6 +1,6 @@
 {
   "name": "@55b89241-9bf2-4f24-b6e5-0d0936c86320/rabbitmq-app-builder",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "RabbitMQ consumer application builder with graceful shutdown",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
