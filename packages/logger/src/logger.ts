@@ -1,7 +1,7 @@
 import pino from "pino";
 import type { Logger } from "./types";
 
-type LogFn = (msg: string, data?: Record<string, unknown>) => void;
+export type LogFn = (msg: string, data?: Record<string, unknown>) => void;
 
 const wrapLogger = (pinoLogger: pino.Logger): Logger => {
   const createLogFn = (level: pino.Level): LogFn => {
