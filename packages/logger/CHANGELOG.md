@@ -1,5 +1,11 @@
 # @55b89241-9bf2-4f24-b6e5-0d0936c86320/logger
 
+## 0.4.0
+
+### Minor Changes
+
+- fb9a4c7: Changes
+
 ## 0.3.0
 
 ### Minor Changes
