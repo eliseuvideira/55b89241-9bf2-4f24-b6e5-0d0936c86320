@@ -10,7 +10,8 @@
     "test": "turbo run test",
     "changeset": "changeset",
     "version-packages": "changeset version",
-    "release": "turbo run build && changeset publish"
+    "ci:version": "changeset version && pnpm install --lockfile-only",
+    "ci:publish": "pnpm publish -r --no-git-checks"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.1",

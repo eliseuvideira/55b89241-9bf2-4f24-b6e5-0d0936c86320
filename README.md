@@ -1,55 +1,74 @@
 # Reusable Packages Monorepo
 
-A collection of simple, focused packages extracted for reuse.
+A collection of simple, focused packages for building RabbitMQ consumers with clean logging.
 
 ## Packages
 
-- `@55b89241-9bf2-4f24-b6e5-0d0936c86320/logger` - Pino logger wrapper with consistent signature
-- `@55b89241-9bf2-4f24-b6e5-0d0936c86320/rabbitmq-app-builder` - RabbitMQ consumer application builder
+- **`@55b89241-9bf2-4f24-b6e5-0d0936c86320/logger`** - Pino logger wrapper with consistent signature
+- **`@55b89241-9bf2-4f24-b6e5-0d0936c86320/rabbitmq-app-builder`** - RabbitMQ consumer application builder with graceful shutdown
 
-## Setup
+## Quick Start
 
 ```bash
+# Install dependencies
 pnpm install
+
+# Build all packages
 pnpm build
-```
 
-## Development
-
-Build all packages:
-```bash
-pnpm build
-```
-
-Watch mode for development:
-```bash
+# Run in watch mode during development
 pnpm dev
 ```
 
-## Versioning
+## Development Workflow
 
-This monorepo uses changesets for version management.
+### Making Changes
 
-Create a changeset:
-```bash
-pnpm changeset
+1. Create a feature branch
+2. Make your changes
+3. Create a changeset: `pnpm changeset`
+4. Commit and push
+5. Create a PR
+
+### Publishing (Automated via GitHub Actions)
+
+When you merge a PR with changesets:
+
+1. GitHub Action creates a "Version Packages" PR
+2. Review and merge the Version PR
+3. Packages are automatically published to npm
+
+See [SETUP.md](./SETUP.md) for complete setup and workflow documentation.
+
+## Project Structure
+
+```
+packages/
+├── logger/              # Logger package
+└── rabbitmq-app-builder/  # RabbitMQ builder package
 ```
 
-Version packages:
-```bash
-pnpm version-packages
-```
+## Tech Stack
 
-Publish to npm:
-```bash
-pnpm release
-```
+- **Turborepo** - Monorepo build system with caching
+- **Changesets** - Version management and changelog generation
+- **pnpm** - Fast, disk-space efficient package manager
+- **TypeScript** - Type-safe development
 
-## Publishing
+## First Time Setup
 
-Before publishing, update the scope in all package.json files from `@55b89241-9bf2-4f24-b6e5-0d0936c86320` to your actual npm scope (e.g., `@your-username` or `@your-org`).
+1. Replace `@55b89241-9bf2-4f24-b6e5-0d0936c86320` with your npm scope
+2. Set up GitHub repository
+3. Add `NPM_TOKEN` to GitHub Secrets
+4. Install Changesets bot (optional)
 
-Then:
-1. Create a changeset: `pnpm changeset`
-2. Version packages: `pnpm version-packages`
-3. Publish: `pnpm release`
+See [SETUP.md](./SETUP.md) for detailed instructions.
+
+## Documentation
+
+- [SETUP.md](./SETUP.md) - Complete setup and workflow guide
+- [WORKFLOW.md](./WORKFLOW.md) - Visual workflow from code to publish
+- [CHANGESET_ENFORCEMENT.md](./CHANGESET_ENFORCEMENT.md) - How to enforce changesets on PRs
+- [USAGE_EXAMPLE.md](./USAGE_EXAMPLE.md) - How to use these packages in your app
+- [packages/logger/README.md](./packages/logger/README.md) - Logger package docs
+- [packages/rabbitmq-app-builder/README.md](./packages/rabbitmq-app-builder/README.md) - RabbitMQ builder docs

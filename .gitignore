@@ -1,5 +1,14 @@
+# Dependencies
 node_modules
+
+# Build outputs
 dist
+
+# Turborepo cache
 .turbo
-.changeset/*.md
-!.changeset/README.md
+ARCHITECTURE.md
+CHANGES_SUMMARY.md
+CHANGESET_ENFORCEMENT.md
+CHECKLIST.md
+SETUP.md
+WORKFLOW.md
